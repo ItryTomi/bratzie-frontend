@@ -1,8 +1,26 @@
 import { Link } from 'react-router-dom'
-import { MessageCircle, Mail, MapPin, Truck, RefreshCw, PartyPopper, Ruler } from 'lucide-react'
+import { MessageCircle, Mail, MapPin, Truck, RefreshCw, PartyPopper, Ruler, CreditCard } from 'lucide-react'
 import './Institucionales.css'
 
 const WSP = '5493624960582'
+
+// lucide v1 no trae íconos de marca — los dibujamos acá.
+const IconInstagram = () => (
+  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor"
+    strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <rect x="2" y="2" width="20" height="20" rx="5" />
+    <circle cx="12" cy="12" r="4" />
+    <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
+  </svg>
+)
+
+const IconTikTok = () => (
+  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor"
+    strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="M15 3v11.5a4 4 0 1 1-3-3.87" />
+    <path d="M15 6.5A5 5 0 0 0 20 9.5" />
+  </svg>
+)
 
 /* ---------------- Nosotros ---------------- */
 export function Nosotros() {
@@ -47,7 +65,29 @@ export function Nosotros() {
 /* ---------------- Contacto ---------------- */
 export function Contacto() {
   return (
-    <div className="wrap doc">
+    <div className="wrap doc doc-ancho">
+      {/* Placa de marca — mismo lenguaje que la tarjeta de "Gracias por tu compra" */}
+      <section className="placa">
+        <div className="placa-marco">
+          <img className="placa-logo" src="/img/logo.webp" alt="bratzie.shop" width="360" height="315" />
+
+          <p className="placa-lead">Ropa Y2K y de los 2000s · Prendas únicas</p>
+
+          <span className="placa-banda">Seguinos en nuestras redes</span>
+
+          <div className="placa-redes">
+            <a href="https://instagram.com/bratzie.shop" target="_blank" rel="noreferrer">
+              <IconInstagram />
+              <span><small>Instagram</small>@bratzie.shop</span>
+            </a>
+            <a href="https://tiktok.com/@bratzie.shop" target="_blank" rel="noreferrer">
+              <IconTikTok />
+              <span><small>TikTok</small>@bratzie.shop</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
       <h1>Contacto</h1>
       <p className="doc-lead">
         Lo más rápido es WhatsApp. Contestamos consultas de talles, medidas, envíos y disponibilidad.
@@ -71,11 +111,40 @@ export function Contacto() {
         </div>
       </div>
 
+      <h2><CreditCard size={20} /> Medios de pago</h2>
+      <div className="pagos">
+        <div className="pago">
+          <b>Tarjeta de crédito</b>
+          <span>Hasta 6 cuotas sin interés, a través de Mercado Pago.</span>
+        </div>
+        <div className="pago">
+          <b>Tarjeta de débito</b>
+          <span>Acreditación inmediata.</span>
+        </div>
+        <div className="pago">
+          <b>Transferencia o efectivo</b>
+          <span>Coordinás por WhatsApp antes de completar el pedido.</span>
+        </div>
+        <div className="pago">
+          <b>Dinero en Mercado Pago</b>
+          <span>Pagás con tu saldo disponible.</span>
+        </div>
+      </div>
+      <p className="doc-nota">
+        El pago se completa dentro de Mercado Pago. Nunca vemos ni guardamos los datos de tu tarjeta.
+      </p>
+
+      <h2><Truck size={20} /> Envíos</h2>
+      <ul className="doc-lista">
+        <li>Enviamos a todo el país por Correo Argentino, en 3 a 7 días hábiles.</li>
+        <li>Envío gratis en las prendas marcadas con la etiqueta correspondiente.</li>
+        <li>También podés retirar en persona en De Grandi 538, coordinando por WhatsApp.</li>
+      </ul>
+
       <h2>Antes de escribir</h2>
       <ul className="doc-lista">
         <li>Las medidas de cada prenda están publicadas en su ficha, en centímetros.</li>
         <li>Todas las prendas son únicas: si aparece en el catálogo, está disponible.</li>
-        <li>Los envíos salen a todo el país y demoran entre 3 y 7 días hábiles.</li>
       </ul>
     </div>
   )

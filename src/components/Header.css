@@ -1,15 +1,22 @@
+/* Barra negra con una línea de color abajo, en lugar de una franja saturada de
+   lado a lado: la marca usa el color en líneas finas, nunca en manchas grandes. */
 .topbar {
-  background: var(--grad-y2k);
-  color: #FFF;
+  position: relative;
+  background: var(--bg);
+  color: var(--pink-light);
   text-align: center;
-  font-size: .78rem; font-weight: 700;
-  letter-spacing: .04em;
-  padding: 7px var(--s4);
+  font-size: .76rem; font-weight: 600;
+  letter-spacing: .06em;
+  padding: 9px var(--s4);
+}
+.topbar::after {
+  content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 1px;
+  background: var(--grad-y2k);
 }
 
 .hd {
   position: sticky; top: 0; z-index: 40;
-  background: rgba(10,10,15,.86);
+  background: rgba(5, 4, 6, .88);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--line);
 }

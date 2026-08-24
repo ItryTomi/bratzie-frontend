@@ -14,6 +14,14 @@ const IconInstagram = () => (
   </svg>
 )
 
+const IconTikTok = () => (
+  <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="M15 3v11.5a4 4 0 1 1-3-3.87" />
+    <path d="M15 6.5A5 5 0 0 0 20 9.5" />
+  </svg>
+)
+
 export default function Footer() {
   return (
     <footer className="ft">
@@ -31,6 +39,7 @@ export default function Footer() {
           <div className="ft-social">
             <a href={`https://wa.me/${WSP}`} target="_blank" rel="noreferrer" aria-label="WhatsApp"><MessageCircle size={19} /></a>
             <a href="https://instagram.com/bratzie.shop" target="_blank" rel="noreferrer" aria-label="Instagram"><IconInstagram /></a>
+            <a href="https://tiktok.com/@bratzie.shop" target="_blank" rel="noreferrer" aria-label="TikTok"><IconTikTok /></a>
             <a href="mailto:Toralesnidia4@gmail.com" aria-label="Email"><Mail size={19} /></a>
           </div>
         </div>

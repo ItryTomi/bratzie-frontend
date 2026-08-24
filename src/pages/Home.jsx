@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { ArrowRight, Sparkles, Ruler, Truck } from 'lucide-react'
+import { ArrowRight, Ruler, Truck } from 'lucide-react'
 import ProductCard from '../components/ProductCard'
 import { productos, CATEGORIAS } from '../data/productos'
 import './Home.css'
@@ -20,7 +20,6 @@ export default function Home() {
       <section className="hero">
         <div className="hero-glow" aria-hidden="true" />
         <div className="wrap hero-in">
-          <span className="hero-kicker"><Sparkles size={14} /> Ropa Y2K original · 2000s</span>
           <h1>
             <span className="brillo-text">Lo que ves</span><br />
             <span className="grad-text">es lo único que hay</span>
