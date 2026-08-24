@@ -30,7 +30,7 @@ export default function Header() {
           </button>
 
           <Link to="/" className="hd-logo">
-            <span className="chrome-text">bratzie</span><span className="hd-logo-dot">.shop</span>
+            <span className="brillo-text">bratzie</span><span className="hd-logo-dot">.shop</span>
           </Link>
 
           <nav className="hd-nav" aria-label="Principal">

@@ -1,6 +1,6 @@
 .topbar {
   background: var(--grad-y2k);
-  color: #0A0A0F;
+  color: #FFF;
   text-align: center;
   font-size: .78rem; font-weight: 700;
   letter-spacing: .04em;
@@ -35,13 +35,13 @@
   transition: color .18s ease, border-color .18s ease;
 }
 .hd-link:hover { color: var(--pink-soft); }
-.hd-link.is-active { color: var(--pink); border-bottom-color: var(--pink); }
+.hd-link.is-active { color: var(--pink-soft); border-bottom-color: var(--pink); }
 
 .hd-cart { position: relative; background: none; border: 0; color: var(--txt); padding: var(--s2); display: grid; place-items: center; }
 .hd-cart:hover { color: var(--pink); }
 .hd-count {
   position: absolute; top: 0; right: 0;
-  background: var(--pink); color: #10000A;
+  background: var(--pink); color: #000;
   font-size: .68rem; font-weight: 800;
   min-width: 18px; height: 18px; padding: 0 4px;
   border-radius: var(--r-full);

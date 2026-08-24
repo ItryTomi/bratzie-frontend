@@ -1,6 +1,6 @@
 .ck { padding-top: var(--s5); }
 .ck-volver { display: inline-flex; align-items: center; gap: 6px; font-size: .85rem; color: var(--txt-dim); margin-bottom: var(--s4); }
-.ck-volver:hover { color: var(--pink); }
+.ck-volver:hover { color: var(--pink-soft); }
 .ck h1 { margin-bottom: var(--s6); }
 
 .ck-grid { display: grid; grid-template-columns: 1fr 380px; gap: var(--s6); align-items: start; }
@@ -28,7 +28,7 @@
 }
 .ck-campo input:focus, .ck-campo textarea:focus { border-color: var(--pink); outline: none; }
 .ck-campo textarea { resize: vertical; }
-.ck-campo em { font-style: normal; font-size: .75rem; color: var(--pink); }
+.ck-campo em { font-style: normal; font-size: .75rem; color: var(--pink-soft); }
 .ck-campo.is-error input { border-color: var(--pink); }
 
 .ck-entregas { display: flex; flex-direction: column; gap: var(--s2); }
@@ -38,7 +38,7 @@
   cursor: pointer; transition: border-color .18s ease, background .18s ease;
 }
 .ck-entrega:hover { border-color: var(--txt-faint); }
-.ck-entrega.is-on { border-color: var(--pink); background: rgba(255,45,155,.06); }
+.ck-entrega.is-on { border-color: var(--pink); background: rgba(225,29,116,.10); }
 .ck-entrega input { accent-color: var(--pink); width: 18px; height: 18px; }
 .ck-entrega span { display: flex; flex-direction: column; }
 .ck-entrega b { font-size: .92rem; }

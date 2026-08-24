@@ -26,7 +26,7 @@ export default function Footer() {
 
       <div className="wrap ft-main">
         <div className="ft-brand">
-          <span className="ft-logo"><span className="chrome-text">bratzie</span><span>.shop</span></span>
+          <span className="ft-logo"><span className="brillo-text">bratzie</span><span>.shop</span></span>
           <p>Ropa Y2K y de los 2000s. Prendas originales, seleccionadas de a una. Lo que ves es lo único que hay.</p>
           <div className="ft-social">
             <a href={`https://wa.me/${WSP}`} target="_blank" rel="noreferrer" aria-label="WhatsApp"><MessageCircle size={19} /></a>

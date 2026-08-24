@@ -12,7 +12,7 @@
   padding: 10px var(--s4); border-radius: var(--r-full); font-weight: 600; font-size: .88rem;
 }
 .cat-pill {
-  background: var(--pink); color: #10000A; border-radius: var(--r-full);
+  background: var(--pink); color: #000; border-radius: var(--r-full);
   min-width: 19px; height: 19px; font-size: .7rem; font-weight: 800;
   display: grid; place-items: center;
 }
@@ -43,8 +43,8 @@
 }
 .chip small { color: var(--txt-faint); margin-left: 4px; font-size: .75rem; }
 .chip:hover { border-color: var(--pink); color: var(--txt); }
-.chip.is-on { background: var(--pink); border-color: var(--pink); color: #10000A; font-weight: 700; }
-.chip.is-on small { color: rgba(16, 0, 10, .65); }
+.chip.is-on { background: var(--pink); border-color: var(--pink); color: #000; font-weight: 700; }
+.chip.is-on small { color: rgba(0,0,0,.6); }
 
 .f-talles { display: flex; flex-wrap: wrap; gap: var(--s2); }
 .talle {
@@ -53,7 +53,7 @@
   font-weight: 700; font-size: .92rem; transition: all .18s ease;
 }
 .talle:hover { border-color: var(--pink); color: var(--txt); }
-.talle.is-on { background: var(--pink); border-color: var(--pink); color: #10000A; }
+.talle.is-on { background: var(--pink); border-color: var(--pink); color: #000; }
 
 .cat-vacio {
   text-align: center; padding: var(--s9) var(--s4); color: var(--txt-dim);

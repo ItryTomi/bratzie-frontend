@@ -40,12 +40,33 @@ es más parecido a una tienda de vintage curado. De ahí se desprende:
 
 ## Design system
 
-Tokens en `src/styles/global.css`. Lo esencial:
+Tokens en `src/styles/global.css`.
 
-- **Color**: fondo `#0A0A0F`, rosa `#FF2D9B` (tomado del logo), violeta, cian.
-  `--txt-dim` está calculado para dar ~7:1 de contraste sobre el fondo.
+### Paleta: negro, rosa oscuro y morado oscuro
+
+Pedida por la clienta. El negro y el rosa salen **medidos del logo**: se muestreó
+pixel por pixel y da fondo `#030603` y rosa anclado en el **tono 332°** (55.659
+píxeles en el rango magenta contra 12 en el violeta — el logo no tiene morado).
+El morado se derivó como vecino del rosa para que la familia se sostenga.
+
+| Token | Valor | Contraste sobre `--bg` | Uso |
+|---|---|---|---|
+| `--pink` | `#E11D74` | 4.44:1 | Rellenos y bordes. Texto solo en tamaño grande |
+| `--pink-soft` | `#FF5CA8` | 7.05:1 | Texto e íconos rosados sobre el fondo |
+| `--pink-light` | `#FBC8E3` | 13.9:1 | El rosa claro del logotipo |
+| `--purple` | `#7B2CBF` | 2.84:1 | **Solo** relleno, gradiente o borde. Nunca texto sobre `--bg` |
+| `--purple-soft` | `#A855F7` | 5.09:1 | El morado cuando necesita leerse |
+| `--txt` / `--txt-dim` / `--txt-faint` | | 17.7 / 8.9 / 5.3 : 1 | Jerarquía de texto |
+
+**La regla que hay que respetar:** el morado oscuro sobre negro da 2.84:1 y no
+llega a AA. Funciona como relleno (con texto blanco da 7.11:1) y como parada del
+gradiente, nunca como color de texto suelto. Lo mismo con `--pink`: sobre relleno
+rosa el texto va en negro puro (4.63:1), y sobre el gradiente va en blanco, que es
+el único que pasa en ambos extremos.
+
 - **Tipografía**: Archivo Black (display, muy 2000s) + Inter (texto).
-- **Firma visual**: `.chrome-text` (gradiente cromado) y `.grad-text` (rosa→violeta→cian).
+- **Firma visual**: `.brillo-text` (blanco → rosa claro → rosa, como el lettering
+  del logo) y `.grad-text` (rosa → morado).
 - Respeta `prefers-reduced-motion`.
 
 ## Pagos

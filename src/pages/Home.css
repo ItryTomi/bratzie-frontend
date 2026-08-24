@@ -2,8 +2,9 @@
 .hero { position: relative; overflow: hidden; padding-block: clamp(var(--s7), 11vw, 130px); }
 .hero-glow {
   position: absolute; inset: -30% 0 auto; height: 620px;
-  background: radial-gradient(50% 50% at 50% 40%, rgba(255,45,155,.30), transparent 68%),
-              radial-gradient(40% 42% at 78% 30%, rgba(34,211,238,.18), transparent 70%);
+  background: radial-gradient(50% 50% at 50% 40%, rgba(225,29,116,.32), transparent 68%),
+              radial-gradient(42% 44% at 78% 28%, rgba(123,44,191,.34), transparent 70%),
+              radial-gradient(38% 40% at 18% 34%, rgba(123,44,191,.22), transparent 72%);
   pointer-events: none;
 }
 .hero-in { position: relative; text-align: center; display: flex; flex-direction: column; align-items: center; gap: var(--s4); }
@@ -30,7 +31,7 @@
 .sec-head { display: flex; align-items: baseline; justify-content: space-between; gap: var(--s4); margin-bottom: var(--s5); }
 .sec-tit { margin-bottom: var(--s5); }
 .sec-head .sec-tit { margin-bottom: 0; }
-.sec-link { display: inline-flex; align-items: center; gap: 6px; font-size: .88rem; font-weight: 600; color: var(--pink); white-space: nowrap; }
+.sec-link { display: inline-flex; align-items: center; gap: 6px; font-size: .88rem; font-weight: 600; color: var(--pink-soft); white-space: nowrap; }
 .sec-link:hover { color: var(--pink-soft); }
 
 /* ---------- Tiles de categoría ---------- */
@@ -61,7 +62,7 @@
 .como li::before {
   content: counter(n); position: absolute; left: 0; top: -2px;
   width: 30px; height: 30px; border-radius: var(--r-full);
-  background: var(--grad-y2k); color: #0A0A0F;
+  background: var(--grad-y2k); color: #FFF;
   font-family: var(--font-display); font-size: .9rem;
   display: grid; place-items: center;
 }

@@ -3,26 +3,39 @@
    ========================================================= */
 
 :root {
-  /* --- Color --- */
-  --bg:            #0A0A0F;
-  --bg-elev:       #14141C;
-  --bg-elev-2:     #1D1D28;
-  --line:          #2A2A38;
+  /* --- Color ---
+     Paleta pedida por la clienta: negro, rosa oscuro y morado oscuro.
+     El negro y el rosa salen medidos del logo (fondo #030603, rosa en tono 332°).
+     El morado no está en el logo: se deriva como vecino del rosa para que la
+     familia se sostenga.
 
-  --pink:          #FF2D9B;   /* del logo */
-  --pink-soft:     #FF7ABF;
-  --violet:        #A855F7;
-  --cyan:          #22D3EE;
+     Regla de uso, por contraste sobre --bg (medido, WCAG AA):
+       --pink         4.44:1 -> relleno de botón con texto negro, títulos grandes
+       --pink-soft    7.05:1 -> texto e íconos rosados sobre el fondo
+       --purple       2.84:1 -> SOLO relleno/gradiente/borde. Nunca texto sobre --bg
+       --purple-soft  5.09:1 -> el morado cuando necesita leerse sobre el fondo   */
+  --bg:            #0A0510;
+  --bg-elev:       #150B1E;
+  --bg-elev-2:     #1F1129;
+  --line:          #33203F;
 
-  --txt:           #F5F5FA;
-  --txt-dim:       #A8A8BE;   /* 7.2:1 sobre --bg */
-  --txt-faint:     #6E6E85;
+  --pink:          #E11D74;   /* rosa oscuro */
+  --pink-soft:     #FF5CA8;
+  --pink-light:    #FBC8E3;   /* el rosa claro del logotipo */
+
+  --purple:        #7B2CBF;   /* morado oscuro */
+  --purple-soft:   #A855F7;
+
+  --txt:           #F6EEF6;   /* 17.7:1 */
+  --txt-dim:       #B8A6C4;   /* 8.9:1  */
+  --txt-faint:     #8D7C9C;   /* 5.3:1  */
 
   --ok:            #34D399;
   --warn:          #FBBF24;
 
-  --chrome: linear-gradient(180deg, #FFFFFF 0%, #C9CEDC 38%, #7C8497 52%, #E4E8F2 70%, #FFFFFF 100%);
-  --grad-y2k: linear-gradient(120deg, var(--pink) 0%, var(--violet) 50%, var(--cyan) 100%);
+  /* Brillo del logotipo: blanco -> rosa claro -> rosa, como el lettering original */
+  --brillo: linear-gradient(180deg, #FFFFFF 0%, #FBC8E3 40%, #E86FB0 56%, #FBD9EC 74%, #FFFFFF 100%);
+  --grad-y2k: linear-gradient(120deg, var(--pink) 0%, var(--purple) 100%);
 
   /* --- Tipografía --- */
   --font-display: 'Archivo Black', 'Arial Black', sans-serif;
@@ -35,7 +48,7 @@
   --r-sm: 8px; --r-md: 14px; --r-lg: 22px; --r-full: 999px;
   --maxw: 1240px;
 
-  --shadow-glow: 0 0 32px rgba(255, 45, 155, .35);
+  --shadow-glow: 0 0 32px rgba(225, 29, 116, .45);
   --shadow-card: 0 8px 32px rgba(0, 0, 0, .5);
 }
 
@@ -58,7 +71,7 @@ a { color: inherit; text-decoration: none; }
 button { font: inherit; cursor: pointer; }
 
 :focus-visible {
-  outline: 2px solid var(--cyan);
+  outline: 2px solid var(--pink-soft);
   outline-offset: 3px;
   border-radius: var(--r-sm);
 }
@@ -77,9 +90,9 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
 
 .wrap { max-width: var(--maxw); margin-inline: auto; padding-inline: var(--s4); }
 
-/* Texto cromado — firma visual de la marca */
-.chrome-text {
-  background: var(--chrome);
+/* Lettering con brillo — firma visual, tomada del logotipo */
+.brillo-text {
+  background: var(--brillo);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -104,7 +117,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
 }
 .btn:active { transform: translateY(1px); }
 
-.btn-primary { background: var(--pink); color: #10000A; box-shadow: var(--shadow-glow); }
+.btn-primary { background: var(--pink); color: #000; box-shadow: var(--shadow-glow); }
 .btn-primary:hover { background: var(--pink-soft); }
 
 .btn-ghost { background: transparent; color: var(--txt); border-color: var(--line); }
@@ -119,8 +132,9 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
   padding: 4px 10px; border-radius: var(--r-full);
   font-size: .7rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
 }
-.badge-off   { background: var(--pink); color: #10000A; }
-.badge-unica { background: rgba(34,211,238,.14); color: var(--cyan); border: 1px solid rgba(34,211,238,.35); }
+.badge-off   { background: var(--pink); color: #000; }
+/* El morado sí puede leerse acá: va sobre su propio fondo tintado, no sobre --bg */
+.badge-unica { background: rgba(123,44,191,.28); color: #DDB8FA; border: 1px solid rgba(168,85,247,.45); }
 .badge-envio { background: rgba(52,211,153,.14); color: var(--ok); border: 1px solid rgba(52,211,153,.3); }
 
 /* ---------- Utilidades ---------- */

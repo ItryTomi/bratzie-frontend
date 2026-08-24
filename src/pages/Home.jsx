@@ -22,7 +22,7 @@ export default function Home() {
         <div className="wrap hero-in">
           <span className="hero-kicker"><Sparkles size={14} /> Ropa Y2K original · 2000s</span>
           <h1>
-            <span className="chrome-text">Lo que ves</span><br />
+            <span className="brillo-text">Lo que ves</span><br />
             <span className="grad-text">es lo único que hay</span>
           </h1>
           <p className="hero-sub">
