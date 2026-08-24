@@ -1,0 +1,69 @@
+.topbar {
+  background: var(--grad-y2k);
+  color: #0A0A0F;
+  text-align: center;
+  font-size: .78rem; font-weight: 700;
+  letter-spacing: .04em;
+  padding: 7px var(--s4);
+}
+
+.hd {
+  position: sticky; top: 0; z-index: 40;
+  background: rgba(10,10,15,.86);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
+}
+.hd-in {
+  display: flex; align-items: center; gap: var(--s5);
+  height: 68px;
+}
+
+.hd-logo {
+  font-family: var(--font-display);
+  font-size: 1.5rem; letter-spacing: -.03em;
+  text-transform: lowercase;
+  white-space: nowrap;
+}
+.hd-logo-dot { color: var(--pink); }
+
+.hd-nav { display: flex; gap: var(--s5); margin-left: auto; }
+.hd-link {
+  font-size: .92rem; font-weight: 600;
+  color: var(--txt);            /* contraste alto — el sitio viejo usaba gris s/ negro */
+  padding: 6px 0;
+  border-bottom: 2px solid transparent;
+  transition: color .18s ease, border-color .18s ease;
+}
+.hd-link:hover { color: var(--pink-soft); }
+.hd-link.is-active { color: var(--pink); border-bottom-color: var(--pink); }
+
+.hd-cart { position: relative; background: none; border: 0; color: var(--txt); padding: var(--s2); display: grid; place-items: center; }
+.hd-cart:hover { color: var(--pink); }
+.hd-count {
+  position: absolute; top: 0; right: 0;
+  background: var(--pink); color: #10000A;
+  font-size: .68rem; font-weight: 800;
+  min-width: 18px; height: 18px; padding: 0 4px;
+  border-radius: var(--r-full);
+  display: grid; place-items: center;
+}
+
+.hd-burger { display: none; background: none; border: 0; color: var(--txt); padding: var(--s2); }
+
+/* --- Mobile --- */
+.mob {
+  position: fixed; inset: 0; z-index: 60;
+  background: var(--bg);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--s6);
+}
+.mob-close { position: absolute; top: var(--s5); right: var(--s5); background: none; border: 0; color: var(--txt); }
+.mob-nav { display: flex; flex-direction: column; gap: var(--s5); text-align: center; }
+.mob-nav a { font-family: var(--font-display); font-size: 1.9rem; text-transform: uppercase; }
+.mob-nav a:hover { color: var(--pink); }
+
+@media (max-width: 800px) {
+  .hd-nav { display: none; }
+  .hd-burger { display: grid; place-items: center; }
+  .hd-logo { margin-inline: auto; }
+  .hd-in { gap: var(--s3); }
+}

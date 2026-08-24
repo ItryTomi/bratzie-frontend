@@ -1,0 +1,67 @@
+/* ---------- HERO ---------- */
+.hero { position: relative; overflow: hidden; padding-block: clamp(var(--s7), 11vw, 130px); }
+.hero-glow {
+  position: absolute; inset: -30% 0 auto; height: 620px;
+  background: radial-gradient(50% 50% at 50% 40%, rgba(255,45,155,.30), transparent 68%),
+              radial-gradient(40% 42% at 78% 30%, rgba(34,211,238,.18), transparent 70%);
+  pointer-events: none;
+}
+.hero-in { position: relative; text-align: center; display: flex; flex-direction: column; align-items: center; gap: var(--s4); }
+
+.hero-kicker {
+  display: inline-flex; align-items: center; gap: 7px;
+  border: 1px solid var(--line); border-radius: var(--r-full);
+  padding: 6px 14px; font-size: .74rem; font-weight: 700;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--txt-dim);
+  background: rgba(255,255,255,.03);
+}
+.hero-kicker svg { color: var(--pink); }
+
+.hero h1 { max-width: 15ch; }
+.hero-sub { max-width: 54ch; color: var(--txt-dim); font-size: 1.05rem; margin: 0; }
+.hero-cta { display: flex; gap: var(--s3); flex-wrap: wrap; justify-content: center; margin-top: var(--s2); }
+.hero-nota {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-size: .82rem; color: var(--txt-faint); margin: var(--s2) 0 0;
+}
+
+/* ---------- Secciones ---------- */
+.sec { margin-top: var(--s9); }
+.sec-head { display: flex; align-items: baseline; justify-content: space-between; gap: var(--s4); margin-bottom: var(--s5); }
+.sec-tit { margin-bottom: var(--s5); }
+.sec-head .sec-tit { margin-bottom: 0; }
+.sec-link { display: inline-flex; align-items: center; gap: 6px; font-size: .88rem; font-weight: 600; color: var(--pink); white-space: nowrap; }
+.sec-link:hover { color: var(--pink-soft); }
+
+/* ---------- Tiles de categoría ---------- */
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--s4); }
+.tile {
+  position: relative; border-radius: var(--r-lg); overflow: hidden;
+  aspect-ratio: 4/3; border: 1px solid var(--line);
+}
+.tile img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+.tile::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,10,15,.92) 12%, transparent 65%); }
+.tile:hover img { transform: scale(1.07); }
+.tile:hover { border-color: var(--pink); }
+.tile-lbl {
+  position: absolute; left: var(--s5); bottom: var(--s4); z-index: 1;
+  font-family: var(--font-display); font-size: 1.5rem; text-transform: uppercase;
+  display: flex; flex-direction: column;
+}
+.tile-lbl small { font-family: var(--font-body); font-size: .78rem; font-weight: 500; color: var(--txt-dim); text-transform: none; letter-spacing: 0; }
+
+/* ---------- Cómo comprar ---------- */
+.como {
+  background: var(--bg-elev); border: 1px solid var(--line);
+  border-radius: var(--r-lg); padding: var(--s7) var(--s6);
+}
+.como ol { counter-reset: n; list-style: none; padding: 0; margin: 0 0 var(--s5); display: grid; gap: var(--s4); grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.como li { counter-increment: n; position: relative; padding-left: 44px; font-size: .92rem; color: var(--txt-dim); }
+.como li b { color: var(--txt); display: block; }
+.como li::before {
+  content: counter(n); position: absolute; left: 0; top: -2px;
+  width: 30px; height: 30px; border-radius: var(--r-full);
+  background: var(--grad-y2k); color: #0A0A0F;
+  font-family: var(--font-display); font-size: .9rem;
+  display: grid; place-items: center;
+}

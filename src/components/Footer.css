@@ -1,0 +1,49 @@
+.ft { border-top: 1px solid var(--line); margin-top: var(--s9); background: var(--bg-elev); }
+
+.ft-trust {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--s5);
+  padding-block: var(--s6);
+  border-bottom: 1px solid var(--line);
+}
+.ft-trust > div { display: grid; grid-template-columns: auto 1fr; column-gap: var(--s3); row-gap: 2px; align-items: center; }
+.ft-trust svg { grid-row: span 2; color: var(--pink); }
+.ft-trust b { font-size: .92rem; }
+.ft-trust span { font-size: .8rem; color: var(--txt-dim); }
+
+.ft-main {
+  display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: var(--s6);
+  padding-block: var(--s7);
+}
+.ft-brand p { color: var(--txt-dim); font-size: .88rem; max-width: 34ch; }
+.ft-logo { font-family: var(--font-display); font-size: 1.35rem; text-transform: lowercase; }
+.ft-logo span:last-child { color: var(--pink); }
+
+.ft-social { display: flex; gap: var(--s3); margin-top: var(--s4); }
+.ft-social a {
+  width: 38px; height: 38px; display: grid; place-items: center;
+  border: 1px solid var(--line); border-radius: var(--r-full); color: var(--txt-dim);
+  transition: all .2s ease;
+}
+.ft-social a:hover { border-color: var(--pink); color: var(--pink); }
+
+.ft-col { display: flex; flex-direction: column; gap: var(--s2); }
+.ft-col h4 { margin: 0 0 var(--s2); font-size: .78rem; text-transform: uppercase; letter-spacing: .1em; color: var(--txt-faint); }
+.ft-col a, .ft-dir { font-size: .88rem; color: var(--txt-dim); }
+.ft-col a:hover { color: var(--pink-soft); }
+.ft-dir { display: inline-flex; align-items: center; gap: 6px; }
+
+.ft-legal {
+  border-top: 1px solid var(--line);
+  padding-block: var(--s4);
+  display: flex; justify-content: space-between; flex-wrap: wrap; gap: var(--s2);
+  font-size: .76rem; color: var(--txt-faint);
+}
+.ft-legal p { margin: 0; }
+.ft-legal a { text-decoration: underline; }
+.ft-legal a:hover { color: var(--pink-soft); }
+
+@media (max-width: 860px) {
+  .ft-main { grid-template-columns: 1fr 1fr; }
+  .ft-brand { grid-column: 1 / -1; }
+}
