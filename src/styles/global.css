@@ -4,51 +4,53 @@
 
 :root {
   /* --- Color ---
-     Negro, rosa oscuro y morado oscuro.
+     PALETA ESTRICTA DEL LOGO. Ningún color inventado.
 
-     Sacado de las piezas reales de la marca (logotipo y placa "Gracias por tu
-     compra"): fondo NEGRO, rosa neón en líneas finas y lettering rosa claro.
-     La marca nunca usa manchas grandes de color saturado — por eso acá el color
-     va en acentos y bordes, y las superficies quedan casi negras.
+     Los 9 tonos salen de muestrear logo.webp pixel por pixel, agrupando por
+     franja de luminosidad. La marca entera vive en UN solo tono (330-344) sobre
+     negro: de la ciruela oscura del contorno al rosa claro del lettering.
 
-     La escala de rosa está medida del logo, toda en tono 329-337:
-       muy claro #F4C1DA (s73) · claro #BF7C9C (s36) · medio #623A49 (s26)
-     El "rosa oscuro" de la marca es ese medio: profundo y DESATURADO.
+     El logo no tiene ningún rosa vivo de tono medio: sus rosas saturados son
+     todos claros. Por eso acá no hay magenta neón — era lo que saturaba la vista.
 
-     Contraste sobre --bg (medido, WCAG AA):
-       --pink        4.95:1 -> rellenos, CTA, texto grande
-       --pink-soft   7.98:1 -> texto e íconos rosados
-       --pink-light 13.14:1 -> lettering
-       --pink-deep   2.16:1 -> SOLO superficie y borde. Nunca texto
-       --purple      2.07:1 -> SOLO relleno y gradiente. Nunca texto
-       --purple-soft 6.87:1 -> el morado cuando necesita leerse                  */
-  --bg:            #050406;
-  --bg-elev:       #120C11;
-  --bg-elev-2:     #1C131B;
-  --line:          #2C1E27;
-  --line-soft:     #3E2A38;
+     El "morado oscuro" del pedido es --purple: la ciruela h344 del contorno del
+     lettering. No es un violeta aparte, es la sombra del propio rosa.
 
-  --pink:          #E82A82;
-  --pink-soft:     #FF6FB5;
-  --pink-light:    #F4C1DA;
-  --pink-deep:     #623A49;   /* el rosa oscuro medido del logo */
+     Contraste sobre --bg (medido, WCAG AA — todos los pares pasan):
+       --pink        10.03:1 -> acento, CTA (con texto negro: 10.45:1)
+       --pink-soft   11.76:1 -> texto e íconos rosados
+       --pink-light  14.80:1 -> lettering y texto principal
+       --pink-deep    2.09:1 -> SOLO superficie y borde
+       --purple       1.52:1 -> SOLO superficie y relleno (texto blanco: 13.27:1)
+       --purple-soft  5.38:1 -> el malva cuando necesita leerse                  */
+  --bg:            #040805;   /* el negro del logo            l2%  */
+  --bg-elev:       #231918;   /*                              l12% */
+  --bg-elev-2:     #41292F;   /* ciruela = el "morado oscuro" l21% */
+  --line:          #5F3A47;   /*                              l30% */
+  --line-soft:     #84596A;   /*                              l43% */
 
-  --purple:        #5B2A87;   /* morado oscuro */
-  --purple-soft:   #B57BF0;
+  --pink:          #EF9FC7;   /* el rosa del destello         l78% */
+  --pink-soft:     #F0B5D3;   /*                              l83% */
+  --pink-light:    #FAD2E6;   /* el lettering                 l90% */
+  --pink-deep:     #5F3A47;   /* rosa oscuro: superficie      l30% */
 
-  --txt:           #F5EDF2;   /* 17.8:1 */
-  --txt-dim:       #BCAAB7;   /*  9.3:1 */
-  --txt-faint:     #8F7E8B;   /*  5.4:1 */
+  --purple:        #41292F;   /* ciruela oscuro               l21% */
+  --purple-soft:   #A9758C;   /* malva legible                l56% */
 
-  --ok:            #34D399;
-  --warn:          #FBBF24;
+  --txt:           #FAD2E6;   /* 14.8:1 */
+  --txt-dim:       #D08DAD;   /*  7.8:1 */
+  --txt-faint:     #A9758C;   /*  5.4:1 */
 
-  /* Brillo del logotipo: blanco -> rosa claro -> rosa */
-  --brillo: linear-gradient(180deg, #FFFFFF 0%, #F4C1DA 40%, #E86FB0 56%, #F9D5E7 74%, #FFFFFF 100%);
-  /* Decorativo (líneas, rellenos): puede irse a oscuro */
+  /* Estados: también dentro de la rampa, para no meter ningún tono ajeno */
+  --ok:            #EF9FC7;
+  --warn:          #D08DAD;
+
+  /* Brillo metálico del lettering, armado con la propia rampa */
+  --brillo: linear-gradient(180deg, #FAD2E6 0%, #F0B5D3 24%, #EF9FC7 50%, #D08DAD 62%, #F0B5D3 78%, #FAD2E6 100%);
+  /* Decorativo (líneas, rellenos): del rosa a la ciruela */
   --grad-y2k: linear-gradient(120deg, var(--pink) 0%, var(--purple) 100%);
-  /* Para texto: ambos extremos legibles sobre el fondo (4.95:1 y 6.87:1) */
-  --grad-text: linear-gradient(105deg, var(--pink) 0%, var(--pink-soft) 45%, var(--purple-soft) 100%);
+  /* Para texto: los tres extremos legibles sobre el fondo (14.8 / 10.0 / 7.8) */
+  --grad-text: linear-gradient(105deg, var(--pink-light) 0%, var(--pink) 50%, var(--txt-dim) 100%);
 
   /* --- Tipografía --- */
   --font-display: 'Archivo Black', 'Arial Black', sans-serif;
@@ -62,7 +64,7 @@
   --maxw: 1240px;
 
   /* Glow contenido, como el neón de las piezas: cerca del borde, no una mancha */
-  --shadow-glow: 0 0 18px rgba(232, 42, 130, .40);
+  --shadow-glow: 0 0 18px rgba(239, 159, 199, .22);
   --shadow-card: 0 8px 32px rgba(0, 0, 0, .5);
 }
 
@@ -148,8 +150,8 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
 }
 .badge-off   { background: var(--pink); color: #000; }
 /* El morado sí puede leerse acá: va sobre su propio fondo tintado, no sobre --bg */
-.badge-unica { background: rgba(91,42,135,.42); color: #DFC4F7; border: 1px solid rgba(181,123,240,.45); }
-.badge-envio { background: rgba(52,211,153,.14); color: var(--ok); border: 1px solid rgba(52,211,153,.3); }
+.badge-unica { background: rgba(65,41,47,.65); color: var(--pink-light); border: 1px solid rgba(169,117,140,.45); }
+.badge-envio { background: rgba(95,58,71,.55); color: var(--ok); border: 1px solid rgba(169,117,140,.40); }
 
 /* ---------- Utilidades ---------- */
 .sr-only {

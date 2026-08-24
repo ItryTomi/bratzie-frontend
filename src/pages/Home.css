@@ -4,8 +4,8 @@
    Antes eran tres manchas al 32% que lavaban toda la sección y cansaban la vista. */
 .hero-glow {
   position: absolute; inset: -25% 0 auto; height: 560px;
-  background: radial-gradient(46% 46% at 50% 40%, rgba(232,42,130,.15), transparent 70%),
-              radial-gradient(34% 36% at 72% 32%, rgba(91,42,135,.13), transparent 72%);
+  background: radial-gradient(46% 46% at 50% 40%, rgba(239,159,199,.12), transparent 70%),
+              radial-gradient(34% 36% at 72% 32%, rgba(65,41,47,.34), transparent 72%);
   pointer-events: none;
 }
 .hero-in { position: relative; text-align: center; display: flex; flex-direction: column; align-items: center; gap: var(--s4); }
@@ -33,7 +33,7 @@
   aspect-ratio: 4/3; border: 1px solid var(--line);
 }
 .tile img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
-.tile::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,10,15,.92) 12%, transparent 65%); }
+.tile::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(4,8,5,.94) 12%, transparent 65%); }
 .tile:hover img { transform: scale(1.07); }
 .tile:hover { border-color: var(--pink); }
 .tile-lbl {
@@ -54,7 +54,7 @@
 .como li::before {
   content: counter(n); position: absolute; left: 0; top: -2px;
   width: 30px; height: 30px; border-radius: var(--r-full);
-  background: var(--grad-y2k); color: #FFF;
+  background: var(--grad-y2k); color: var(--pink-light);
   font-family: var(--font-display); font-size: .9rem;
   display: grid; place-items: center;
 }

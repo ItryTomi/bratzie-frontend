@@ -38,7 +38,7 @@
   cursor: pointer; transition: border-color .18s ease, background .18s ease;
 }
 .ck-entrega:hover { border-color: var(--txt-faint); }
-.ck-entrega.is-on { border-color: var(--pink); background: rgba(225,29,116,.10); }
+.ck-entrega.is-on { border-color: var(--pink); background: rgba(239,159,199,.10); }
 .ck-entrega input { accent-color: var(--pink); width: 18px; height: 18px; }
 .ck-entrega span { display: flex; flex-direction: column; }
 .ck-entrega b { font-size: .92rem; }
